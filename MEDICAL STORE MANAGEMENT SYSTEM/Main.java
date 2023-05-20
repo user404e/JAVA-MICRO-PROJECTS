@@ -6,15 +6,17 @@ public class Main{
 
         int choice = -1;
 
-        while(choice!=0){
-            System.out.println("1) ADMIN");
-            System.out.println("2) EMPLOYEE");
-            System.out.println("0) Exit\n");
+        Admin a = new Admin();
+        System.out.println(a.n);
 
-            System.out.print("_ : ");
+        // while(choice!=0){
+        //     System.out.println("1) ADMIN");
+        //     System.out.println("2) EMPLOYEE");
+        //     System.out.println("0) Exit\n");
 
-            choice = scan.nextInt();
-            
-        }
+        //     System.out.print("_ : ");
+
+        //     choice = scan.nextInt();
+        // }
     }
 }
