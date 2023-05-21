@@ -16,7 +16,7 @@ public class Main{
             choice = scan.nextInt();   
 
             if(choice == 1){
-                login l1 = new login();
+                login l = new login();
 
                 int count = 1;
 
@@ -28,8 +28,34 @@ public class Main{
                     System.out.print("Password : ");
                     String pass = scan.next();
 
-                    if(l1.loginadmin(id, pass)){
+                    if(l.loginadmin(id, pass)){
                         System.out.println("Login Successful");
+                        break;
+                    }
+                    else{
+                        System.out.println("\nWRONG ID PASS , TRY AGAIN");
+                        System.out.println((3-count) + " CHANCES LEFT - ");
+                        count ++;
+                    }
+                }
+            }
+
+            else if(choice == 2){
+
+                login l = new login();
+
+                int count = 1;
+
+                while(count<=3){
+                    System.out.println("\n!- STAFF LOGIN -!");
+                    System.out.print("\nUserID : ");
+                    String id = scan.next();
+
+                    System.out.print("Password : ");
+                    String pass = scan.next();
+
+                    if(l.loginstaff(id, pass)){
+                        System.out.println("\nLogin Successful");
                         break;
                     }
                     else{
