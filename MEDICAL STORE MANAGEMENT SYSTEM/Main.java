@@ -35,14 +35,14 @@ public class Main{
 
                     if(l.loginadmin(id, pass)){
                         count = 4;
-                        System.out.println("Login Successful");
+                        System.out.println("\nLogin Successful");
 
                         int choice1 = -1;
 
                         while(choice1 != 0){
                             System.out.println("\n!- ADMIN MENU -!");
 
-                            System.out.println("\n1) SEE SUPPLIERS DATA");
+                            System.out.println("\n1) CHECK SUPPLIERS DATA");
                             System.out.println("2) CHECK STAFF DATA");
                             System.out.println("3) ADD NEW STAFF MEMBER");
                             System.out.println("4) CHECK CUSTOMER DATA");
@@ -53,6 +53,12 @@ public class Main{
                             System.out.print("\n_ : ");
 
                             choice1 = scan.nextInt(); 
+
+                            if(choice1 == 2){
+
+                                Staff s = new Staff();
+                                s.staffdata();
+                            }
                         }
                         
                     }
