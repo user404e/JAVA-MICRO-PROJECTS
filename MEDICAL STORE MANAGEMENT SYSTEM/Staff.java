@@ -34,31 +34,39 @@ public class Staff {
             System.out.println("\nFILE NOT FOUND - ");
         }
     }
-    void staffdataspecific(String fname){
-        System.out.println("\n!!- Staff Data -!!");
 
+    void staffdataspecific(String fname) {
+            
         try {
-
             File f = new File("StaffData.csv");
             Scanner scan = new Scanner(f);
-            int count = 1;
 
-            while(scan.hasNextLine()){
+            boolean flag = false;
+
+            while(scan.hasNextLine()) {
                 
                 String stfdata = scan.nextLine();
                 String[] stf = stfdata.split(",");
+                
+                if(fname.equals(stf[0])) {
+                    System.out.println("\n!!- Staff Data -!!");
 
-                if(fname.equals(stf[0])){
                     System.out.println("\nName = " + stf[0] + " " + stf[1]);
                     System.out.println("Age = " + stf[2]);
                     System.out.println("Mobile Number = " + stf[3]);
                     System.out.println("Address = " + stf[4]);
                     System.out.println("Joining Date = " + stf[5]);
                     System.out.println("Salary = " + stf[6]);
+                    flag = true;
                     break;
                 }
             }
-        } catch (FileNotFoundException e) {
+
+            if(flag == false) {
+                System.out.println("\nSorry Staff Member Not Found 'or' Check Spelling And Try Again -");
+            }
+        }
+        catch (FileNotFoundException e) {
             System.out.println("\nFILE NOT FOUND - ");
         }
     }
