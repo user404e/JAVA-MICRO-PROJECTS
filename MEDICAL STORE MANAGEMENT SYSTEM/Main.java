@@ -55,12 +55,34 @@ public class Main{
                             choice1 = scan.nextInt(); 
 
                             if(choice1 == 2){
+                                int choice12 = -1;
+                                
+                                while(choice12!=0){
+                                    System.out.println("\n!- CHECK STAFF DATA -!");
 
-                                Staff s = new Staff();
-                                s.staffdata();
+                                    System.out.println("\n1) ALL");
+                                    System.out.println("2) SPECIFIC STAFF MEMBER");
+                                    System.out.println("0) BACK TO ADMIN MENU");
+
+                                    System.out.print("\n_ : ");
+
+                                    choice12 = scan.nextInt(); 
+                                    Staff s1 = new Staff();
+
+                                    if(choice12 == 1){
+
+                                        s1.staffdataall();
+                                    }
+                                    else if(choice12 == 2){
+
+                                        System.out.print("\nEnter First Name Of StaffMember : ");
+                                        String fname = scan.next();
+
+                                        s1.staffdataspecific(fname);
+                                    }
+                                }    
                             }
-                        }
-                        
+                        }  
                     }
                     else{
                         System.out.println("\nWRONG ID PASS , TRY AGAIN");

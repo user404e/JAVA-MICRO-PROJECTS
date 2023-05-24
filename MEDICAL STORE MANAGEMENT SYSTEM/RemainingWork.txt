@@ -2,3 +2,4 @@
 2) show two more sub option 'show staff data' in admin menu ,i) search specific staff member ii) show all staff members data.
 3) seprate the first name and last name in 'StaffData.csv' for searching specific staff member by its first name or last name. 
 4) add update staff data  option in admin menu.
+5) search staff member by its id or name.
