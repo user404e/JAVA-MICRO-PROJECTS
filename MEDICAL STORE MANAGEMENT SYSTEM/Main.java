@@ -44,10 +44,10 @@ public class Main{
 
                             System.out.println("\n1) CHECK SUPPLIERS DATA");
                             System.out.println("2) CHECK STAFF DATA");
-                            System.out.println("3) ADD NEW STAFF MEMBER");
-                            System.out.println("4) CHECK CUSTOMER DATA");
-                            System.out.println("5) CHECK STOCKS DATA");
-
+                            System.out.println("3) UPDATE STAFF DATA");
+                            System.out.println("4) ADD NEW STAFF MEMBER");
+                            System.out.println("5) CHECK CUSTOMER DATA");
+                            System.out.println("6) CHECK STOCKS DATA");
                             System.out.println("0) BACK TO MAIN MENU");
 
                             System.out.print("\n_ : ");
@@ -82,16 +82,46 @@ public class Main{
                                     }
                                 }    
                             }
+                            else if(choice1 == 3){
+
+                                int choice13 = -1;
+                                System.out.println("\n!- UPDATE STAFF DATA -!");
+
+                                while(choice13!=0){
+                                    
+                                    System.out.println("\n1) UPDATE FIRST NAME");
+                                    System.out.println("2) UPDATE LAST NAME");
+                                    System.out.println("3) UPDATE AGE");
+                                    System.out.println("4) UPDATE MOBILE NUMBER");
+                                    System.out.println("5) UPDATE ADDRESS");
+                                    System.out.println("6) UPDATE SALARY");
+                                    System.out.println("0) BACK TO ADMIN MENU");
+
+                                    System.out.print("\n_ : ");
+
+                                    choice13 = scan.nextInt(); 
+
+                                    if(choice13==1){
+                                        System.out.println("!! - UPDATE FIRST NAME -!!");
+
+                                        System.out.println("Enter Old First Name : ");
+                                        String oldfname = scan.next();
+
+                                        Staff s1 = new Staff();
+                                        int rvalue = s1.checkstaffmember(oldfname);
+                                        System.out.println(rvalue);                                        
+                                    }
+                                }
+                            }
                         }  
                     }
                     else{
-                        System.out.println("\nWRONG ID PASS , TRY AGAIN");
+                        System.out.println("\nWRONG ID 'or' PASS , TRY AGAIN");
                         System.out.println((3-count) + " CHANCES LEFT - ");
                         count ++;
                     }
                 }
             }
-
             else if(choice == 2){
 
                 login l = new login();
@@ -99,6 +129,7 @@ public class Main{
                 int count = 1;
 
                 while(count<=3){
+
                     System.out.println("\n!- STAFF LOGIN -!");
                     System.out.print("\nUserID : ");
                     String id = scan.next();
