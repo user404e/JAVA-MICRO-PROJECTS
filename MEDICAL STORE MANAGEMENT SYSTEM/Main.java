@@ -32,7 +32,9 @@ public class Main{
 
                     System.out.print("Password : ");
                     String pass = scan.next();
-
+                    
+                    System.out.println(l.loginadmin(id, pass));
+                    
                     if(l.loginadmin(id, pass)){
                         count = 4;
                         System.out.println("\nLogin Successful");
@@ -75,7 +77,7 @@ public class Main{
                                     }
                                     else if(choice12 == 2){
 
-                                        System.out.print("\nEnter First Name Of StaffMember : ");
+                                        System.out.print("\nEnter First Name Of StaffMember 'or' StaffId : ");
                                         String fname = scan.next();
 
                                         s1.staffdataspecific(fname);
@@ -102,14 +104,7 @@ public class Main{
                                     choice13 = scan.nextInt(); 
 
                                     if(choice13==1){
-                                        System.out.println("!! - UPDATE FIRST NAME -!!");
-
-                                        System.out.println("Enter Old First Name : ");
-                                        String oldfname = scan.next();
-
-                                        Staff s1 = new Staff();
-                                        int rvalue = s1.checkstaffmember(oldfname);
-                                        System.out.println(rvalue);                                        
+                                                                       
                                     }
                                 }
                             }
