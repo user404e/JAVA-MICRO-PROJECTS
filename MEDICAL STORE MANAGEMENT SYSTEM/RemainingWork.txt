@@ -1,4 +1,4 @@
 - ) after showing wrong id pass , display an option to try again or quit y,n.
 * ) update staff data in admin menu
 - ) seprate login code in main.java for more specific check if given userid is wrong or password wrong or user not exist .
-
+* ) change admin userid or password.
