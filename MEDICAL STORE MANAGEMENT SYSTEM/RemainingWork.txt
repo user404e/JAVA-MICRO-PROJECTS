@@ -1,3 +1,4 @@
-2) show two more sub option 'show staff data' in admin menu ,i) search specific staff member ii) show all staff members data.
-4) add update staff data  option in admin menu.
-5) search staff member by its id or name.
+- ) after showing wrong id pass , display an option to try again or quit y,n.
+* ) update staff data in admin menu
+- ) seprate login code in main.java for more specific check if given userid is wrong or password wrong or user not exist .
+

@@ -146,6 +146,12 @@ public class Main{
                     }
                 }
             }
+            else if (choice == 0) {
+                System.out.println("\nPROGRAM EXITED -");
+            }
+            else {
+                System.out.println("\nINVALID INPUT , TRY AGAIN - ");
+            }
         }
     }
 }
