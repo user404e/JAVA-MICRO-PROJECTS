@@ -24,7 +24,6 @@ public class Main{
 
                 while(count<=3){
                     
-
                     System.out.println("\n!- ADMIN LOGIN -!");
 
                     System.out.print("\nUserID : ");
@@ -111,10 +110,123 @@ public class Main{
                                         System.out.print("\nEnter Your Employee ID : ");
                                         String empid = scan.next();
 
-                                        System.out.print("\nEnter Your New First Name");
+                                        System.out.print("\nEnter Your New First Name : ");
                                         String fname = scan.next();
 
-                                        s1.updatestaffdata(empid,fname,1);                   
+                                        int rvalue = s1.updatestaffdata(empid,fname,1); 
+                                        if(rvalue==0){
+                                            System.out.println("\nUpdated Successfully ....");
+                                        }
+                                        else if(rvalue == 1){
+                                            System.out.println("\nGiven Staff Id Is Wrong ....");
+                                        }                 
+                                    }
+                                    else if(choice13==2){
+                                        Staff s1 = new Staff();
+
+                                        System.out.println("\n!!- UPDATE LAST NAME -!!");
+                                        
+                                        System.out.print("\nEnter Your Employee ID : ");
+                                        String empid = scan.next();
+
+                                        System.out.print("\nEnter Your New Last Name : ");
+                                        String lname = scan.next();
+
+                                        int rvalue = s1.updatestaffdata(empid,lname,2);
+
+                                        if(rvalue==0){
+                                            System.out.println("\nUpdated Successfully ....");
+                                        }
+                                        else if(rvalue == 1){
+                                            System.out.println("\nGiven Staff Id Is Wrong ....");
+                                        }                 
+                                    }
+                                    else if(choice13==3){
+                                        Staff s1 = new Staff();
+
+                                        System.out.println("\n!!- UPDATE AGE -!!");
+                                        
+                                        System.out.print("\nEnter Your Employee ID : ");
+                                        String empid = scan.next();
+
+                                        System.out.print("\nEnter Your New Age : ");
+                                        String lname = scan.next();
+
+                                        int rvalue = s1.updatestaffdata(empid,lname,3);
+
+                                        if(rvalue==0){
+                                            System.out.println("\nUpdated Successfully ....");
+                                        }
+                                        else if(rvalue == 1){
+                                            System.out.println("\nGiven Staff Id Is Wrong ....");
+                                        }                 
+                                    }
+                                    else if(choice13==4){
+                                        Staff s1 = new Staff();
+
+                                        System.out.println("\n!!- UPDATE MOBILE NUMBER -!!");
+                                        
+                                        System.out.print("\nEnter Your Employee ID : ");
+                                        String empid = scan.next();
+
+                                        System.out.print("\nEnter Your New Mobile Number : ");
+                                        String lname = scan.next();
+
+                                        int rvalue = s1.updatestaffdata(empid,lname,4);
+
+                                        if(rvalue==0){
+                                            System.out.println("\nUpdated Successfully ....");
+                                        }
+                                        else if(rvalue == 1){
+                                            System.out.println("\nGiven Staff Id Is Wrong ....");
+                                        }                 
+                                    }
+                                    else if(choice13==5){
+                                        Staff s1 = new Staff();
+
+                                        System.out.println("\n!!- UPDATE ADDRESS -!!");
+                                        
+                                        System.out.print("\nEnter Your Employee ID : ");
+                                        String empid = scan.next();
+
+                                        System.out.print("\nEnter Your New Address : ");
+                                        String address= scan.nextLine();
+                                        address+=scan.nextLine();
+
+                                        int rvalue = s1.updatestaffdata(empid,address,5);
+
+                                        if(rvalue==0){
+                                            System.out.println("\nUpdated Successfully ....");
+                                        }
+                                        else if(rvalue == 1){
+                                            System.out.println("\nGiven Staff Id Is Wrong ....");
+                                        }                 
+                                    }
+                                    else if(choice13==6){
+                                        Staff s1 = new Staff();
+
+                                        System.out.println("\n!!- UPDATE SALARY -!!");
+                                        
+                                        System.out.print("\nEnter Employee ID : ");
+                                        String empid = scan.next();
+
+                                        System.out.print("\nEnter New Salary : ");
+                                        String lname = scan.next();
+
+                                        int rvalue = s1.updatestaffdata(empid,lname,7);
+
+                                        if(rvalue==0){
+                                            System.out.println("\nUpdated Successfully ....");
+                                        }
+                                        else if(rvalue == 1){
+                                            System.out.println("\nGiven Staff Id Is Wrong ....");
+                                        }                 
+                                    }
+                                    else if(choice13 == 0){
+                                        System.out.println("\n- EXITED STAFF DATA UPDATE MENU -");
+                                    }
+                                    else{
+                                        System.out.println("\n- INVALID INPUT -");
                                     }
                                 }
                             }
