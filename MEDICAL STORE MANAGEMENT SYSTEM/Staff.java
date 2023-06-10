@@ -108,6 +108,22 @@ public class Staff {
     void updatestaffdata(String s1,String s2,int choice){
         try {
             Scanner scan = new Scanner(f);
+            boolean flag = true;
+            while(scan.hasNextLine()){
+
+                String data = scan.nextLine();
+                String dataarr[] = data.split(",");
+
+                if(dataarr[0].equals(s1)){
+                    if(choice == 1){
+                        
+                    }
+                }
+                else{
+                    flag = false;
+                }
+            }
+
         }
         catch(FileNotFoundException e){
             System.out.println("FILE NOT FOUND - ");   

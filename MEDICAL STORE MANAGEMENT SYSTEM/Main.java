@@ -104,7 +104,17 @@ public class Main{
                                     choice13 = scan.nextInt(); 
 
                                     if(choice13==1){
-                                                                       
+                                        Staff s1 = new Staff();
+
+                                        System.out.println("\n!!- UPDATE FIRST NAME -!!");
+                                        
+                                        System.out.print("\nEnter Your Employee ID : ");
+                                        String empid = scan.next();
+
+                                        System.out.print("\nEnter Your New First Name");
+                                        String fname = scan.next();
+
+                                        s1.updatestaffdata(empid,fname,1);                   
                                     }
                                 }
                             }
