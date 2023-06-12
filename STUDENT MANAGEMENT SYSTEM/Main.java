@@ -41,11 +41,12 @@ public class Main {
 
                                 System.out.print("\nEnter Your Choice : ");
                                 choice1 = sc.nextInt();
+
+                                Student s = new Student(); // Student Class object to call addNewStudent methods.
+
                                 // Starting Of 'Add New Student' Option.
                                 if(choice1 == 1){
                                     System.out.println("\n ---- Add New Student ----");
-                                    Student s = new Student(); // Student Class object to call addNewStudent method to add new student details to csv file.
-
                                     System.out.print("\nEnter Enrollemt Number : ");
                                     String enrollmentnum = sc.next();                   // Input Enrollment Number Of Student
 
@@ -72,6 +73,11 @@ public class Main {
                                 }
                                 else if(choice1 == 3){
                                     System.out.println("\n ---- Search Student Profile ----");
+
+                                    System.out.print("\nEnter Student First Name 'or' Enrollment Number : ");
+                                    String input = sc.next();
+
+                                    s.searchStudent(input);
                                 }
                                 else if(choice1 == 4){
                                     System.out.println("\n ---- Update Student Profile ----");
@@ -104,8 +110,7 @@ public class Main {
                 default:
                     System.out.println("\nWrong input ");
                     break;
-            }
-            
+            }    
         }while (choice!=0); 
     } 
 }
