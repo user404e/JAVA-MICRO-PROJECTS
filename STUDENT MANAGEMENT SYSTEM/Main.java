@@ -28,10 +28,11 @@ public class Main {
 
                         if(lg.facultylogin(id, pass)){
 
-                            System.out.println("Login Successfull");
+                            System.out.println("\nLogin Successfull");
                             int choice1 = -1;
 
-                            do {
+                            do { 
+                                // Display Option Of Faculty Menu.
                                 System.out.println("\n -------- Faculty Menu --------");
                                 System.out.println("\n1 - ADD NEW STUDENT");
                                 System.out.println("2 - REMOVE A STUDENT");
@@ -40,10 +41,32 @@ public class Main {
 
                                 System.out.print("\nEnter Your Choice : ");
                                 choice1 = sc.nextInt();
-
+                                // Starting Of 'Add New Student' Option.
                                 if(choice1 == 1){
                                     System.out.println("\n ---- Add New Student ----");
+                                    Student s = new Student(); // Student Class object to call addNewStudent method to add new student details to csv file.
+
+                                    System.out.print("\nEnter Enrollemt Number : ");
+                                    String enrollmentnum = sc.next();                   // Input Enrollment Number Of Student
+
+                                    System.out.print("Enter First Name : ");
+                                    String fname = sc.next();                           // Input First Name Of Student
+
+                                    System.out.print("Enter Last Name : ");
+                                    String lname = sc.next();                           // Input Last Name Of Student
+
+                                    System.out.print("Enter Father Name : ");
+                                    String fathername = sc.next();                      // Input Father Name Of Student
+
+                                    System.out.print("Enter Departemt : ");
+                                    String departemnt = sc.next();                      // Input Department Of Student
+
+                                    System.out.print("Enter Sem : ");
+                                    String sem = sc.next();                             // Input Sem Of Student
+
+                                    s.addNewStudent(fname, lname, fathername, departemnt, sem, enrollmentnum); // called method to add New Student Details To 'StudentData.csv' file.
                                 }
+                                // End Of 'Add New Student' Option.
                                 else if(choice1 == 2){
                                     System.out.println("\n ---- Remove Student ----");
                                 }
