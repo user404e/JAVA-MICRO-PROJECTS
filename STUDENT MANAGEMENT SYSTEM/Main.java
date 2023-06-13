@@ -96,26 +96,30 @@ public class Main {
                                         System.out.println("\nEnter Your Choice : ");
                                         choice14 = sc.nextInt();
 
+
                                         if(choice14 == 1){
-                                            System.out.println(" -- Change Enrollment Number -- ");
+                                            System.out.println("\n -- Change Enrollment Number -- ");
                                         }
                                         else if(choice14 == 2){
-                                            System.out.println(" -- Change First Name -- ");
+                                            System.out.println("\n -- Change First Name -- ");
                                         }
                                         else if(choice14 == 3){
-                                            System.out.println(" -- Change Last Name -- ");
+                                            System.out.println("\n -- Change Last Name -- ");
                                         }
                                         else if(choice14 == 4){
-                                            System.out.println(" -- Change Father Name -- ");
+                                            System.out.println("\n -- Change Father Name -- ");
                                         }
                                         else if(choice14 == 5){
-                                            System.out.println(" -- Change Department -- ");
+                                            System.out.println("\n -- Change Department -- ");
                                         }
                                         else if(choice14 == 6){
-                                            System.out.println(" -- Change Sem -- ");
+                                            System.out.println("\n -- Change Sem -- ");
                                         }
                                         else if(choice14 == 0){
-                                            System.out.println("Student Data Update Menu Exited - ");
+                                            System.out.println("\nStudent Data Update Menu Exited - ");
+                                        }
+                                        else{
+                                            System.out.println("\nInvalid Input - ");
                                         }
 
                                     }while (choice14!=0);
