@@ -38,6 +38,7 @@ public class Main {
                                 System.out.println("2 - REMOVE A STUDENT");
                                 System.out.println("3 - SHOW STUDENT PROFILE");
                                 System.out.println("4 - UPDATE STUDENT PROFILE");
+                                System.out.println("0 - Exit");
 
                                 System.out.print("\nEnter Your Choice : ");
                                 choice1 = sc.nextInt();
@@ -80,7 +81,45 @@ public class Main {
                                     s.searchStudent(input);
                                 }
                                 else if(choice1 == 4){
-                                    System.out.println("\n ---- Update Student Profile ----");
+                                    int choice14 = -1;
+                                    do {
+                                        System.out.println("\n ---- Update Student Profile ----");
+
+                                        System.out.println("\n1 - Change EnrollmentNumber");
+                                        System.out.println("2 - Change First Name");
+                                        System.out.println("3 - Change Last Name : ");
+                                        System.out.println("4 - Change Father Name : ");
+                                        System.out.println("5 - Change Department : ");
+                                        System.out.println("6 - Change Sem : ");
+                                        System.out.println("0 - Exit");
+
+                                        System.out.println("\nEnter Your Choice : ");
+                                        choice14 = sc.nextInt();
+
+                                        if(choice14 == 1){
+                                            System.out.println(" -- Change Enrollment Number -- ");
+                                        }
+                                        else if(choice14 == 2){
+                                            System.out.println(" -- Change First Name -- ");
+                                        }
+                                        else if(choice14 == 3){
+                                            System.out.println(" -- Change Last Name -- ");
+                                        }
+                                        else if(choice14 == 4){
+                                            System.out.println(" -- Change Father Name -- ");
+                                        }
+                                        else if(choice14 == 5){
+                                            System.out.println(" -- Change Department -- ");
+                                        }
+                                        else if(choice14 == 6){
+                                            System.out.println(" -- Change Sem -- ");
+                                        }
+                                        else if(choice14 == 0){
+                                            System.out.println("Student Data Update Menu Exited - ");
+                                        }
+
+                                    }while (choice14!=0);
+
                                 }
                                 else if(choice1 == 0){
                                     System.out.println("\nExited Faculty Menu - ");
