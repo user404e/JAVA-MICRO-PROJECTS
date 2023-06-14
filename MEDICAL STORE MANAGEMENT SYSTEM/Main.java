@@ -224,7 +224,7 @@ public class Main{
                                     }
                                 }
                             }
-                            if(choice1 == 5){
+                            else if(choice1 == 5){
                                 System.out.println("\n!- REMOVE STAFF MEMBER -!");
 
                                 System.out.print("Enter Staff Id : ");
@@ -238,6 +238,49 @@ public class Main{
                                 else if(rvalue == 1){
                                     System.out.println("\nGiven Staff Id Is Wrong , Check And Try Again - ");
                                 } 
+                            }
+                            else if(choice1 == 7){
+
+                                int choice17 = -1;
+                                Stock stk = new Stock();
+
+                                do {
+                                    System.out.println("\n! - CHECK STOCKS DATA - !");
+
+                                    System.out.println("\n1) - SEARCH SPECIFIC MEDICINE");
+                                    System.out.println("2) - SHOW ALL MEDICINE DATA");
+                                    System.out.println("0) - Exit");
+
+                                    System.out.print("\n_ : ");
+
+                                    choice17 = scan.nextInt();
+
+                                    if(choice17 == 1){
+                                        System.out.println("\n!! -- Search Specific Medicine -- !!");
+
+                                        System.out.print("\nEnter Medicine Name : ");
+                                        String medName = scan.next();
+
+                                        System.out.print("\nEnter Power(mg) 'or' Enter 0 To Show All mg : ");
+                                        String powerMg = scan.next();
+
+                                        int rvalue = stk.searchMedicine(medName,powerMg);
+
+                                        if(rvalue == 1){
+                                            System.out.println("\nMedicine Not Found , Check Spelling And Try Again - ");
+                                        }   
+                                    }
+                                    else if(choice17 == 2){
+                                        System.out.println("\n!! -- All Medicine Data -- !!");
+                                    }
+                                    else if(choice17 == 0){
+                                        System.out.println("\nCheck Stock Data Menu Exited - ");
+                                    }
+                                    else{
+                                        System.out.println("\nInvalid Input - ");
+                                    }
+
+                                } while (choice17!=0);
                             }
                         }  
                     }
