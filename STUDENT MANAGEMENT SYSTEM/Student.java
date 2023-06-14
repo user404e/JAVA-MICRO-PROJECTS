@@ -90,4 +90,81 @@ class Student {
             System.out.println("FILE NOT FOUND , ERROR (:");
         }
     }
+
+    int updatestudentdata(String s1,String s2,int choice){
+
+        try {
+
+            Scanner scan = new Scanner(f);
+            boolean flag = false;
+            String final_s = "";
+            
+            while(scan.hasNextLine()){
+                String line = scan.nextLine();
+                
+                if(choice == 1){
+                    String data[] = line.split(",");
+                    if(data[0].equals(s1)){
+                        flag = true; 
+                        data[1] = s2;
+                        line = data[0] + "," + data[1] + "," + data[2] + "," + data[3] + "," + data[4] + "," + data[5] + "," + data[6];
+                    
+                    } 
+                }
+                else if(choice == 2){
+                    String data[] = line.split(",");
+                    if(data[0].equals(s1)){
+                        flag = true; 
+                        data[2] = s2;
+                        line = data[0] + "," + data[1] + "," + data[2] + "," + data[3] + "," + data[4] + "," + data[5] + "," + data[6];
+                    } 
+                }
+                else if(choice == 3){
+                    String data[] = line.split(",");
+                    if(data[0].equals(s1)){
+                        flag = true; 
+                        data[3] = s2;
+                        line = data[0] + "," + data[1] + "," + data[2] + "," + data[3] + "," + data[4] + "," + data[5] + "," + data[6];
+                    } 
+                }
+                else if(choice == 4){
+                    String data[] = line.split(",");
+                    if(data[0].equals(s1)){
+                        flag = true; 
+                        data[4] = s2;
+                        line = data[0] + "," + data[1] + "," + data[2] + "," + data[3] + "," + data[4] + "," + data[5] + "," + data[6];
+                    } 
+                }
+                else if(choice == 5){
+                    String data[] = line.split(",");
+                    if(data[0].equals(s1)){
+                        flag = true; 
+                        data[5] = s2;
+                        line = data[0] + "," + data[1] + "," + data[2] + "," + data[3] + "," + data[4] + "," + data[5] + "," + data[6];
+                    } 
+                }
+                final_s = final_s + line + "\n";
+            }
+
+            FileWriter fw = new FileWriter("StudentData.csv");
+
+            fw.write(final_s);
+            fw.close();
+            
+            if(flag){
+                return 0;
+            }
+            else{
+                return 1;
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("\nFile Not Found ...."); 
+            return -1;
+        } 
+        catch(IOException d){
+            System.out.println("\nIOException ....");
+            return -1;
+        }   
+    }
 }

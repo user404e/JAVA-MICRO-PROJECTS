@@ -85,35 +85,70 @@ public class Main {
                                     do {
                                         System.out.println("\n ---- Update Student Profile ----");
 
-                                        System.out.println("\n1 - Change EnrollmentNumber");
-                                        System.out.println("2 - Change First Name");
-                                        System.out.println("3 - Change Last Name : ");
-                                        System.out.println("4 - Change Father Name : ");
-                                        System.out.println("5 - Change Department : ");
-                                        System.out.println("6 - Change Sem : ");
+                                        System.out.println("1 - Change First Name");
+                                        System.out.println("2 - Change Last Name");
+                                        System.out.println("3 - Change Father Name");
+                                        System.out.println("4 - Change Department");
+                                        System.out.println("5 - Change Sem");
                                         System.out.println("0 - Exit");
 
-                                        System.out.println("\nEnter Your Choice : ");
+                                        System.out.print("\nEnter Your Choice : ");
                                         choice14 = sc.nextInt();
 
-
                                         if(choice14 == 1){
-                                            System.out.println("\n -- Change Enrollment Number -- ");
+                                            System.out.println("\n -- Change First Name -- ");
+
+                                            System.out.print("\nEnter Your Enrollment Number : ");
+                                            String enrollmentno = sc.next();
+
+                                            System.out.print("\nEnter Your First Name : ");
+                                            String fname = sc.next();
+                                   
+                                            s.updatestudentdata(enrollmentno,fname,1);
                                         }
                                         else if(choice14 == 2){
-                                            System.out.println("\n -- Change First Name -- ");
+                                            System.out.println("\n -- Change Last Name -- ");
+
+                                            System.out.print("\nEnter Your Enrollment Number : ");
+                                            String enrollmentno = sc.next();
+
+                                            System.out.print("\nEnter Your Last Name : ");
+                                            String lname = sc.next();
+
+                                            s.updatestudentdata(enrollmentno, lname,2);
                                         }
                                         else if(choice14 == 3){
-                                            System.out.println("\n -- Change Last Name -- ");
+                                            System.out.println("\n -- Change Father Name -- ");
+
+                                            System.out.print("\nEnter Your Enrollment Number : ");
+                                            String enrollmentno = sc.next();
+
+                                            System.out.print("\nEnter Your Father Name : ");
+                                            String fathername = sc.next();
+
+                                            s.updatestudentdata(enrollmentno, fathername,3);
                                         }
                                         else if(choice14 == 4){
-                                            System.out.println("\n -- Change Father Name -- ");
+                                            System.out.println("\n -- Change Department -- ");
+
+                                            System.out.print("\nEnter Your Enrollment Number : ");
+                                            String enrollmentno = sc.next();
+
+                                            System.out.print("\nEnter Your Department : ");
+                                            String department = sc.next();
+
+                                            s.updatestudentdata(enrollmentno, department,4);
                                         }
                                         else if(choice14 == 5){
-                                            System.out.println("\n -- Change Department -- ");
-                                        }
-                                        else if(choice14 == 6){
                                             System.out.println("\n -- Change Sem -- ");
+
+                                            System.out.print("\nEnter Your Enrollment Number : ");
+                                            String enrollmentno = sc.next();
+
+                                            System.out.print("\nEnter Your Semester : ");
+                                            String sem = sc.next();
+
+                                            s.updatestudentdata(enrollmentno, sem,2);
                                         }
                                         else if(choice14 == 0){
                                             System.out.println("\nStudent Data Update Menu Exited - ");
@@ -123,7 +158,6 @@ public class Main {
                                         }
 
                                     }while (choice14!=0);
-
                                 }
                                 else if(choice1 == 0){
                                     System.out.println("\nExited Faculty Menu - ");
@@ -155,5 +189,5 @@ public class Main {
                     break;
             }    
         }while (choice!=0); 
-    } 
+    }
 }
