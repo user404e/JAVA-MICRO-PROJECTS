@@ -71,6 +71,18 @@ public class Main {
                                 // End Of 'Add New Student' Option.
                                 else if(choice1 == 2){
                                     System.out.println("\n ---- Remove Student ----");
+
+                                    System.out.print("\nEnter Enrollment NUmber Of Student : ");
+                                    String enrollmentno = sc.next();
+
+                                    int rvalue = s.removestudent(enrollmentno);
+
+                                    if(rvalue == 0){
+                                        System.out.println("\nStudent Profile Deleted Successfully - ");
+                                    }
+                                    else if(rvalue == 1){
+                                        System.out.println("\nStudent Not Found , Check Enrollment Number And Try Again - ");
+                                    }
                                 }
                                 else if(choice1 == 3){
                                     System.out.println("\n ---- Search Student Profile ----");
@@ -96,7 +108,7 @@ public class Main {
                                         choice14 = sc.nextInt();
 
                                         if(choice14 == 1){
-                                            System.out.println("\n -- Change First Name -- ");
+                                            System.out.println("\n\n -- Change First Name -- ");
 
                                             System.out.print("\nEnter Your Enrollment Number : ");
                                             String enrollmentno = sc.next();
@@ -104,7 +116,14 @@ public class Main {
                                             System.out.print("\nEnter Your First Name : ");
                                             String fname = sc.next();
                                    
-                                            s.updatestudentdata(enrollmentno,fname,1);
+                                            int rvalue = s.updatestudentdata(enrollmentno,fname,1);
+
+                                            if(rvalue == 0){
+                                                System.out.println("\nFirst Name Changed Successfully - ");
+                                            }
+                                            else if(rvalue == 1){
+                                                System.out.println("\nStudent Not Found , Check Enrollment Number And Try Again - ");
+                                            }
                                         }
                                         else if(choice14 == 2){
                                             System.out.println("\n -- Change Last Name -- ");
@@ -115,7 +134,15 @@ public class Main {
                                             System.out.print("\nEnter Your Last Name : ");
                                             String lname = sc.next();
 
-                                            s.updatestudentdata(enrollmentno, lname,2);
+                                            int rvalue = s.updatestudentdata(enrollmentno, lname,2);
+
+                                            if(rvalue == 0){
+                                                System.out.println("\nLast Name Changed Successfully - ");
+                                            }
+                                            else if(rvalue == 1){
+                                                System.out.println("\nStudent Not Found , Check Enrollment Number And Try Again - ");
+                                            }
+
                                         }
                                         else if(choice14 == 3){
                                             System.out.println("\n -- Change Father Name -- ");
@@ -126,7 +153,14 @@ public class Main {
                                             System.out.print("\nEnter Your Father Name : ");
                                             String fathername = sc.next();
 
-                                            s.updatestudentdata(enrollmentno, fathername,3);
+                                            int rvalue = s.updatestudentdata(enrollmentno, fathername,3);
+
+                                            if(rvalue == 0){
+                                                System.out.println("\nFather Name Changed Successfully - ");
+                                            }
+                                            else if(rvalue == 1){
+                                                System.out.println("\nStudent Not Found , Check Enrollment Number And Try Again - ");
+                                            }
                                         }
                                         else if(choice14 == 4){
                                             System.out.println("\n -- Change Department -- ");
@@ -137,7 +171,14 @@ public class Main {
                                             System.out.print("\nEnter Your Department : ");
                                             String department = sc.next();
 
-                                            s.updatestudentdata(enrollmentno, department,4);
+                                            int rvalue = s.updatestudentdata(enrollmentno, department,4);
+
+                                            if(rvalue == 0){
+                                                System.out.println("\nDepartment Changed Successfully - ");
+                                            }
+                                            else if(rvalue == 1){
+                                                System.out.println("\nStudent Not Found , Check Enrollment Number And Try Again - ");
+                                            }
                                         }
                                         else if(choice14 == 5){
                                             System.out.println("\n -- Change Sem -- ");
@@ -148,7 +189,14 @@ public class Main {
                                             System.out.print("\nEnter Your Semester : ");
                                             String sem = sc.next();
 
-                                            s.updatestudentdata(enrollmentno, sem,2);
+                                            int rvalue = s.updatestudentdata(enrollmentno, sem,5);
+
+                                            if(rvalue == 0){
+                                                System.out.println("\nSemester Changed Successfully - ");
+                                            }
+                                            else if(rvalue == 1){
+                                                System.out.println("\nStudent Not Found , Check Enrollment Number And Try Again - ");
+                                            }
                                         }
                                         else if(choice14 == 0){
                                             System.out.println("\nStudent Data Update Menu Exited - ");

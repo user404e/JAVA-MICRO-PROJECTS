@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.io.File;
 import java.util.Scanner;
+
 class Student {
     File f = new File("StudentData.csv");
     void addNewStudent(String fname, String lname, String fathername, String department, String sem, String enrollmentnum) {
@@ -167,4 +168,42 @@ class Student {
             return -1;
         }   
     }
+    int removestudent(String enrollmentno){
+
+        try {
+            Scanner scan = new Scanner(f);
+
+            String final_String = "";
+            boolean flag = false;
+
+            while(scan.hasNextLine()){
+                String line = scan.nextLine();
+                String data[] = line.split(",");
+
+                if(data[0].equals(enrollmentno)){
+                    flag = true;
+                    continue;
+                }
+                final_String += line + "\n";
+            }
+            
+            FileWriter fw = new FileWriter("StudentData.csv");
+
+            fw.write(final_String);
+            fw.close();
+
+            if(flag){
+                return 0;
+            }
+            else{
+                return 1;
+            }
+
+        } catch (FileNotFoundException e) {
+            return -1;
+
+        } catch(IOException io){
+            return -1;
+        }
+    }  
 }
