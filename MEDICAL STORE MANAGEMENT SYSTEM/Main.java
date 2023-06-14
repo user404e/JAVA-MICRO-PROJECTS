@@ -39,6 +39,7 @@ public class Main{
                         System.out.println("\nLogin Successful");
 
                         int choice1 = -1;
+                        Staff s1 = new Staff();
 
                         while(choice1 != 0){
                             System.out.println("\n!- ADMIN MENU -!");
@@ -47,8 +48,9 @@ public class Main{
                             System.out.println("2) CHECK STAFF DATA");
                             System.out.println("3) UPDATE STAFF DATA");
                             System.out.println("4) ADD NEW STAFF MEMBER");
-                            System.out.println("5) CHECK CUSTOMER DATA");
-                            System.out.println("6) CHECK STOCKS DATA");
+                            System.out.println("5) REMOVE STAFF MEMBER");
+                            System.out.println("6) CHECK CUSTOMER DATA");
+                            System.out.println("7) CHECK STOCKS DATA");
                             System.out.println("0) BACK TO MAIN MENU");
 
                             System.out.print("\n_ : ");
@@ -68,8 +70,7 @@ public class Main{
                                     System.out.print("\n_ : ");
 
                                     choice12 = scan.nextInt(); 
-                                    Staff s1 = new Staff();
-
+                                    
                                     if(choice12 == 1){
 
                                         s1.staffdataall();
@@ -103,7 +104,6 @@ public class Main{
                                     choice13 = scan.nextInt(); 
 
                                     if(choice13==1){
-                                        Staff s1 = new Staff();
 
                                         System.out.println("\n!!- UPDATE FIRST NAME -!!");
                                         
@@ -122,8 +122,6 @@ public class Main{
                                         }                 
                                     }
                                     else if(choice13==2){
-                                        Staff s1 = new Staff();
-
                                         System.out.println("\n!!- UPDATE LAST NAME -!!");
                                         
                                         System.out.print("\nEnter Your Employee ID : ");
@@ -142,7 +140,6 @@ public class Main{
                                         }                 
                                     }
                                     else if(choice13==3){
-                                        Staff s1 = new Staff();
 
                                         System.out.println("\n!!- UPDATE AGE -!!");
                                         
@@ -162,7 +159,6 @@ public class Main{
                                         }                 
                                     }
                                     else if(choice13==4){
-                                        Staff s1 = new Staff();
 
                                         System.out.println("\n!!- UPDATE MOBILE NUMBER -!!");
                                         
@@ -182,7 +178,6 @@ public class Main{
                                         }                 
                                     }
                                     else if(choice13==5){
-                                        Staff s1 = new Staff();
 
                                         System.out.println("\n!!- UPDATE ADDRESS -!!");
                                         
@@ -203,7 +198,6 @@ public class Main{
                                         }                 
                                     }
                                     else if(choice13==6){
-                                        Staff s1 = new Staff();
 
                                         System.out.println("\n!!- UPDATE SALARY -!!");
                                         
@@ -219,8 +213,8 @@ public class Main{
                                             System.out.println("\nUpdated Successfully ....");
                                         }
                                         else if(rvalue == 1){
-                                            System.out.println("\nGiven Staff Id Is Wrong ....");
-                                        }                 
+                                            System.out.println("\nGiven Staff Id Is Wrong , Check And Try Again - ");
+                                        }                
                                     }
                                     else if(choice13 == 0){
                                         System.out.println("\n- EXITED STAFF DATA UPDATE MENU -");
@@ -229,6 +223,21 @@ public class Main{
                                         System.out.println("\n- INVALID INPUT -");
                                     }
                                 }
+                            }
+                            if(choice1 == 5){
+                                System.out.println("\n!- REMOVE STAFF MEMBER -!");
+
+                                System.out.print("Enter Staff Id : ");
+                                String staffId = scan.next();
+
+                                int rvalue = s1.removestaffmember(staffId);
+
+                                if(rvalue == 0){
+                                    System.out.println("\nProfile Deleted Successfully - ");
+                                }
+                                else if(rvalue == 1){
+                                    System.out.println("\nGiven Staff Id Is Wrong , Check And Try Again - ");
+                                } 
                             }
                         }  
                     }

@@ -190,4 +190,42 @@ public class Staff {
             return -1;
         }   
     }
+    int removestaffmember(String staffid){
+
+        try {
+            Scanner scan = new Scanner(f);
+
+            String final_String = "";
+            boolean flag = false;
+
+            while(scan.hasNextLine()){
+                String line = scan.nextLine();
+                String data[] = line.split(",");
+
+                if(data[0].equals(staffid)){
+                    flag = true;
+                    continue;
+                }
+                final_String += line + "\n";
+            }
+            
+            FileWriter fw = new FileWriter("StaffData.csv");
+
+            fw.write(final_String);
+            fw.close();
+
+            if(flag){
+                return 0;
+            }
+            else{
+                return 1;
+            }
+
+        } catch (FileNotFoundException e) {
+            return -1;
+
+        } catch(IOException io){
+            return -1;
+        }
+    }  
 }
