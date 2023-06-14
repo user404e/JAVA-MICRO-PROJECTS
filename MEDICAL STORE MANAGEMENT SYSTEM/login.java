@@ -16,8 +16,6 @@ public class login{
             String id = idpassarr[0];
             String pas = idpassarr[1];
 
-            System.out.println(id + " " + pas);
-
             if(id.equals(userid) && pas.equals(pass)){
                 return true;
             }

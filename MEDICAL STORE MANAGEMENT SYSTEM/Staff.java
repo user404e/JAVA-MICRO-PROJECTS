@@ -23,13 +23,13 @@ public class Staff {
                 String[] stf = stfdata.split(",");
 
                 System.out.println("\n##  Staff Member - " + count + "  ##");
-                
-                System.out.println("\nName = " + stf[0] + " " + stf[1]);
-                System.out.println("Age = " + stf[2]);
-                System.out.println("Mobile Number = " + stf[3]);
-                System.out.println("Address = " + stf[4]);
-                System.out.println("Joining Date = " + stf[5]);
-                System.out.println("Salary = " + stf[6]);
+                System.out.println("\nStaff Id = " + stf[0]);
+                System.out.println("Name = " + stf[1] + " " + stf[2]);
+                System.out.println("Age = " + stf[3]);
+                System.out.println("Mobile Number = " + stf[4]);
+                System.out.println("Address = " + stf[5]);
+                System.out.println("Joining Date = " + stf[6]);
+                System.out.println("Salary = " + stf[7]);
 
                 count ++;
             }

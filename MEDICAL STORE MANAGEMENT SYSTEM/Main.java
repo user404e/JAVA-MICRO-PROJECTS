@@ -32,8 +32,6 @@ public class Main{
                     System.out.print("Password : ");
                     String pass = scan.next();
                     
-                    System.out.println(l.loginadmin(id, pass));
-                    
                     if(l.loginadmin(id, pass)){
                         count = 4;
                         System.out.println("\nLogin Successful");
