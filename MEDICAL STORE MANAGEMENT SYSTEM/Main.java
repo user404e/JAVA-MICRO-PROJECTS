@@ -270,6 +270,8 @@ public class Main{
                                     }
                                     else if(choice17 == 2){
                                         System.out.println("\n!! -- All Medicine Data -- !!");
+
+                                        stk.showallmed();
                                     }
                                     else if(choice17 == 0){
                                         System.out.println("\nCheck Stock Data Menu Exited - ");
