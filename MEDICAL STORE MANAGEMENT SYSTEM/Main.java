@@ -262,6 +262,7 @@ public class Main{
                                         System.out.print("\nEnter Power(mg) 'or' Enter 0 To Show All mg : ");
                                         String powerMg = scan.next();
 
+                      
                                         int rvalue = stk.searchMedicine(medName,powerMg);
 
                                         if(rvalue == 1){
@@ -307,11 +308,33 @@ public class Main{
                     String pass = scan.next();
 
                     if(l.loginstaff(id, pass)){
+
                         count = 4;
                         System.out.println("\nLogin Successful");
 
-                        System.out.println("");
-                        
+                        int choice21 = -1;
+
+                        while(choice21!=0){
+
+                            System.out.println("1) BILLING");
+                            System.out.println("0) - Exit");
+                            
+                            System.out.print("\n_ : ");
+
+                            choice21 = scan.nextInt();
+
+                            if(choice21 == 1){
+                                System.out.println("\n!! - Billing - !!");
+
+                                
+                            }
+                            else if(choice21 == 0){
+                                System.out.println("\nStaff Menu Exited - ");
+                            }
+                            else{
+                                System.out.println("\nInvalid Input , Check Options And Try Again - ");
+                            }
+                        }
                     }
                     else{
                         System.out.println("\nWRONG ID PASS , TRY AGAIN");
