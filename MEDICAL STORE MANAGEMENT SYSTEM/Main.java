@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Main{
     public static void main(String[] args) {
@@ -316,7 +318,8 @@ public class Main{
 
                         while(choice21!=0){
 
-                            System.out.println("1) BILLING");
+                            System.out.println("1) Search Medicine");
+                            System.out.println("2) Generate Bill");
                             System.out.println("0) - Exit");
                             
                             System.out.print("\n_ : ");
@@ -324,15 +327,62 @@ public class Main{
                             choice21 = scan.nextInt();
 
                             if(choice21 == 1){
-                                System.out.println("\n!! - Billing - !!");
+                                System.out.println("\n!! - Search Medicine - !!");
+                                System.out.println("\n!! -- Search Specific Medicine -- !!");
 
-                                
-                            }
-                            else if(choice21 == 0){
-                                System.out.println("\nStaff Menu Exited - ");
-                            }
-                            else{
-                                System.out.println("\nInvalid Input , Check Options And Try Again - ");
+                                System.out.print("\nEnter Medicine Name : ");
+                                String medName = scan.next();
+
+                                System.out.print("\nEnter Power(mg) 'or' Enter 0 To Show All mg : ");
+                                String powerMg = scan.next();
+
+                                File f = new File("StockData.csv");
+        
+                                try {
+                                    Scanner sc = new Scanner(f);
+                                    boolean flag = false;
+                                    int c = 1;
+                                    String fulldata = "";
+
+                                    while(sc.hasNextLine()){
+                                        String medicine = sc.nextLine();
+                                        String mdata[] = medicine.split(",");
+
+                                        if(medName.toLowerCase().equals(mdata[1])){
+                                            flag = true;
+
+                                            if(powerMg.equals(mdata[2])){
+                                                System.out.println("\n!! - Medicine Data - !!");
+                                                System.out.println("\nManufacturer     -   " + mdata[0]);
+                                                System.out.println("Name             -   " + mdata[1]);
+                                                System.out.println("Mg               -   " + mdata[2]);
+                                                System.out.println("Quantity         -   " + mdata[3]);
+                                                System.out.println("Price Per Tablet -   " + mdata[4]);
+                                                fulldata += medicine;
+                                            }
+                                            else if(powerMg.equals("0")){
+                                              
+                                                System.out.println("\n!! - Medicine Data - !!");
+                                                System.out.println("\nManufacturer     -   " + mdata[0]);
+                                                System.out.println("Name             -   " + mdata[1]);
+                                                System.out.println("Mg               -   " + mdata[2]);
+                                                System.out.println("Quantity         -   " + mdata[3]);
+                                                System.out.println("Price Per Tablet -   " + mdata[4]);
+                                                fulldata += medicine;
+                                            }
+                                            count += 1;
+                                        }
+                                    }
+                                    System.out.println(fulldata);
+                                    if(flag){
+                                        System.out.println();
+                                    }
+                                    else{
+                                        System.out.println();
+                                    }
+                                } catch (FileNotFoundException e) {
+                                    System.out.println();
+                                }
                             }
                         }
                     }

@@ -20,7 +20,6 @@ class Stock {
 
                 if(medicineName.toLowerCase().equals(mdata[1])){
                     flag = true;
-                    
 
                     if(power.equals(mdata[2])){
                         System.out.println("\n!! - Medicine Data - !!");
