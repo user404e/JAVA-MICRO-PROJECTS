@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.io.File;
+import java.util.ArrayList;
+
 import java.io.FileNotFoundException;
 
 public class Main{
@@ -337,49 +339,71 @@ public class Main{
                                 String powerMg = scan.next();
 
                                 File f = new File("StockData.csv");
-        
+                                ArrayList<String> cart = new ArrayList<>();
+                                ArrayList<String> fulldata = new ArrayList<>();
+                                int c = 0;
                                 try {
                                     Scanner sc = new Scanner(f);
                                     boolean flag = false;
-                                    int c = 1;
-                                    String fulldata = "";
-
+                                    
                                     while(sc.hasNextLine()){
                                         String medicine = sc.nextLine();
                                         String mdata[] = medicine.split(",");
-
+                                        
                                         if(medName.toLowerCase().equals(mdata[1])){
                                             flag = true;
-
+                                            
                                             if(powerMg.equals(mdata[2])){
+                                                c++;
                                                 System.out.println("\n!! - Medicine Data - !!");
-                                                System.out.println("\nManufacturer     -   " + mdata[0]);
+                                                System.out.println("\nMedicine Number  -  " + c);
+                                                System.out.println("Manufacturer     -   " + mdata[0]);
                                                 System.out.println("Name             -   " + mdata[1]);
                                                 System.out.println("Mg               -   " + mdata[2]);
                                                 System.out.println("Quantity         -   " + mdata[3]);
                                                 System.out.println("Price Per Tablet -   " + mdata[4]);
-                                                fulldata += medicine;
+                                                fulldata.add(medicine);  
+                                                break;
                                             }
                                             else if(powerMg.equals("0")){
-                                              
-                                                System.out.println("\n!! - Medicine Data - !!");
-                                                System.out.println("\nManufacturer     -   " + mdata[0]);
+                                                c++;
+                                                System.out.println("\n!! - Medicine Data - !!" );
+                                                System.out.println("\nMedicine Number  -   " + (c));
+                                                System.out.println("Manufacturer     -   " + mdata[0]);
                                                 System.out.println("Name             -   " + mdata[1]);
                                                 System.out.println("Mg               -   " + mdata[2]);
                                                 System.out.println("Quantity         -   " + mdata[3]);
                                                 System.out.println("Price Per Tablet -   " + mdata[4]);
-                                                fulldata += medicine;
+                                                fulldata.add(medicine);
+                                                
                                             }
-                                            count += 1;
+                                            
                                         }
                                     }
-                                    System.out.println(fulldata);
+
                                     if(flag){
-                                        System.out.println();
-                                    }
-                                    else{
-                                        System.out.println();
-                                    }
+                                        System.out.print("\nEnter Medicine Number : ");
+                                        int medchoice = scan.nextInt();
+                                        int c1 = 1;
+                                        for(String data:fulldata){
+                                            System.out.println("Entered");
+                                            if (medchoice == c1) {
+                                                System.out.println("Entered 2");
+                                                String[] d = data.split(",");
+                                                System.out.println(d[1] + " " + d[2] + " " + d[4]);
+                                                System.out.print("Add To Cart (Y/n) : ");
+                                                String reply = scan.next();
+                                                if(reply.toLowerCase().equals("y")){
+                                                    cart.add(data);
+                                                }
+                                                else{
+                                                    break;
+                                                }
+                                            }
+                                            c1++;
+                                        }
+                                    }System.out.println(cart);
+                                    
                                 } catch (FileNotFoundException e) {
                                     System.out.println();
                                 }
