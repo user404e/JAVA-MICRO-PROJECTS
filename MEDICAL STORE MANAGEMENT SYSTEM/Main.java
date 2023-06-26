@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.io.File;
 import java.util.ArrayList;
-
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -322,21 +321,26 @@ public class Main{
 
                         
                         while(choice21!=0){
+                            System.out.println("\n!- STAFF MENU -!");
 
-                            System.out.println("1) Add To Cart (Search Medicine) : ");
-                            System.out.println("2) Generate Bill");
-                            System.out.println("0) - Exit");
+                            System.out.println("\n1) Generate Bill");
+                            System.out.println("2) Add To Cart");
+                            System.out.println("3) Clear Cart");
+                            System.out.println("4) Remove Item From Cart");
+                            System.out.println("0) Exit");
                             
                             System.out.print("\n_ : ");
 
                             choice21 = scan.nextInt();
-
                             if(choice21 == 1){
+                                System.out.println("\nGenerate Bill");
+                            }
+                            else if(choice21 == 2){
 
                                 ArrayList<String> fulldata = new ArrayList<>();
                                 String s = "n";
                                 
-                            
+                                
                                 do{
                                 System.out.println("\n!! -- Add To Cart (Search Medicine) -- !!");
 
@@ -409,7 +413,7 @@ public class Main{
 
                                                 if(reply.toLowerCase().equals("y")){
                                                     FileWriter fw = new FileWriter("cart.csv",true);
-                                                    fw.append(d[1] + "," + d[2] + "," + d[4] + Quantity + "\n");
+                                                    fw.append(d[1] + "," + d[2] + "," + d[4] + "," + Quantity + "\n");
                                                     fw.close();
                                                 }
                                                 else{
@@ -436,6 +440,38 @@ public class Main{
                                 }
 
                                 } while (!s.toLowerCase().equals("n"));
+                            }
+                            else if(choice21 == 3){
+                                System.out.println("\nClear Cart");
+
+                                File f = new File("cart.csv");
+
+                                try {
+                                    Scanner scf = new Scanner(f);
+                                    if(!scf.hasNextLine()){
+                                        System.out.println("\nCart Is Already Empty - ");
+                                    }
+                                    else{
+                                        FileWriter fw = new FileWriter("cart.csv");
+
+                                        fw.write("");
+                                        fw.close();
+
+                                        System.out.println("\nCart Cleared Successfully");
+                                    }
+
+                                } catch (Exception e) {
+                                    
+                                }
+                            }
+                            else if(choice21 == 4){
+                                System.out.println("\nRemove Items From Cart");
+                            }
+                            else if(choice21 == 0){
+                                System.out.println("\nExited Staff Menu - ");
+                            }
+                            else{
+                                System.out.println("\nInvalid Input - ");
                             }
                         }
                     }
