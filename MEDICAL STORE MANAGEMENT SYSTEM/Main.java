@@ -3,6 +3,8 @@ import java.io.File;
 import java.util.ArrayList;
 
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main{
     public static void main(String[] args) {
@@ -318,9 +320,10 @@ public class Main{
 
                         int choice21 = -1;
 
+                        
                         while(choice21!=0){
 
-                            System.out.println("1) Search Medicine");
+                            System.out.println("1) Add To Cart (Search Medicine) : ");
                             System.out.println("2) Generate Bill");
                             System.out.println("0) - Exit");
                             
@@ -329,8 +332,13 @@ public class Main{
                             choice21 = scan.nextInt();
 
                             if(choice21 == 1){
-                                System.out.println("\n!! - Search Medicine - !!");
-                                System.out.println("\n!! -- Search Specific Medicine -- !!");
+
+                                ArrayList<String> fulldata = new ArrayList<>();
+                                String s = "n";
+                                
+                            
+                                do{
+                                System.out.println("\n!! -- Add To Cart (Search Medicine) -- !!");
 
                                 System.out.print("\nEnter Medicine Name : ");
                                 String medName = scan.next();
@@ -339,10 +347,10 @@ public class Main{
                                 String powerMg = scan.next();
 
                                 File f = new File("StockData.csv");
-                                ArrayList<String> cart = new ArrayList<>();
-                                ArrayList<String> fulldata = new ArrayList<>();
+                                
                                 int c = 0;
                                 try {
+                                    
                                     Scanner sc = new Scanner(f);
                                     boolean flag = false;
                                     
@@ -374,27 +382,35 @@ public class Main{
                                                 System.out.println("Mg               -   " + mdata[2]);
                                                 System.out.println("Quantity         -   " + mdata[3]);
                                                 System.out.println("Price Per Tablet -   " + mdata[4]);
-                                                fulldata.add(medicine);
-                                                
-                                            }
-                                            
+                                                fulldata.add(medicine); 
+                                            }  
                                         }
                                     }
 
                                     if(flag){
                                         System.out.print("\nEnter Medicine Number : ");
                                         int medchoice = scan.nextInt();
+
+                                        System.out.print("\nEnter Quantity : ");
+                                        int Quantity = scan.nextInt();
+                                        
                                         int c1 = 1;
+
                                         for(String data:fulldata){
-                                            System.out.println("Entered");
+
                                             if (medchoice == c1) {
-                                                System.out.println("Entered 2");
+
                                                 String[] d = data.split(",");
-                                                System.out.println(d[1] + " " + d[2] + " " + d[4]);
-                                                System.out.print("Add To Cart (Y/n) : ");
+
+                                                System.out.println("\n" + d[1] + " " + d[2] + " " + d[4] + " " + Quantity);
+
+                                                System.out.print("\nAdd To Cart (Y/n) : ");
                                                 String reply = scan.next();
+
                                                 if(reply.toLowerCase().equals("y")){
-                                                    cart.add(data);
+                                                    FileWriter fw = new FileWriter("cart.csv",true);
+                                                    fw.append(d[1] + "," + d[2] + "," + d[4] + Quantity + "\n");
+                                                    fw.close();
                                                 }
                                                 else{
                                                     break;
@@ -402,11 +418,24 @@ public class Main{
                                             }
                                             c1++;
                                         }
-                                    }System.out.println(cart);
-                                    
+                                    }
                                 } catch (FileNotFoundException e) {
-                                    System.out.println();
+
+                                    System.out.println("File Not Found");
                                 }
+                                catch(IOException io){
+
+                                    System.out.println("IOException Occured");
+                                }
+                                fulldata.clear();
+                                System.out.print("Search Another Medicine (Y/n) : ");
+                                s = scan.next();
+
+                                if(s.toLowerCase().equals("n")){
+                                    System.out.println("EXITED ADD TO CART MENU");
+                                }
+
+                                } while (!s.toLowerCase().equals("n"));
                             }
                         }
                     }
