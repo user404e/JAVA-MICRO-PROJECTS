@@ -332,8 +332,37 @@ public class Main{
                             System.out.print("\n_ : ");
 
                             choice21 = scan.nextInt();
+
                             if(choice21 == 1){
                                 System.out.println("\nGenerate Bill");
+
+                                File f = new File("cart.csv");
+
+                                try {
+                                    Scanner scf = new Scanner(f);
+
+                                    if(!scf.hasNextLine()){
+                                        System.out.println("\nCart Is Empty - ");
+                                    }
+                                    else{
+                                        while (scf.hasNextLine()) {
+                                            String data = scf.nextLine();
+                                            String cartdata[] = data.split(",");
+                                            
+                                            System.out.println("Price : " + cartdata[0] + " | Power : " + cartdata[1] + " | Price Per Tablets : " + cartdata[2] + " | Quantity : " + cartdata[3]);
+                                        }
+
+                                        System.out.print("Get Final Bil (Y/n): ");
+                                        String reply = scan.next();
+
+                                        if(reply.toLowerCase().equals("y")){
+                                            
+                                        }
+
+                                    }
+                                } catch (Exception e) {
+                                    System.out.println("\nSomething Went Wrong - ");
+                                }
                             }
                             else if(choice21 == 2){
 
@@ -406,7 +435,7 @@ public class Main{
 
                                                 String[] d = data.split(",");
 
-                                                System.out.println("\n" + d[1] + " " + d[2] + " " + d[4] + " " + Quantity);
+                                                System.out.println("\nName = " + d[1] + "\nPower = " + d[2] + "\nPrice Per Tablet = " + d[4] + "\nQuantity = " + Quantity);
 
                                                 System.out.print("\nAdd To Cart (Y/n) : ");
                                                 String reply = scan.next();
@@ -432,7 +461,7 @@ public class Main{
                                     System.out.println("IOException Occured");
                                 }
                                 fulldata.clear();
-                                System.out.print("Search Another Medicine (Y/n) : ");
+                                System.out.print("\nSearch Another Medicine (Y/n) : ");
                                 s = scan.next();
 
                                 if(s.toLowerCase().equals("n")){
