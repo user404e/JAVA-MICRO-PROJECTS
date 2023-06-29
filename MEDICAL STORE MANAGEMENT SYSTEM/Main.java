@@ -336,7 +336,7 @@ public class Main{
                             if(choice21 == 1){
                                 System.out.println("\nGenerate Bill");
 
-                                File f = new File("cart.csv");
+                                File f = new File("cartdata.csv");
 
                                 try {
                                     Scanner scf = new Scanner(f);
@@ -351,7 +351,7 @@ public class Main{
                                             String cartdata[] = data.split(",");
                                            
                                             String formattedOutput = String.format("Name: %-20s | Power: %-10s | Price Per Tablet: %-10s | Quantity: %s",
-                                                    cartdata[0], cartdata[1], cartdata[2], cartdata[4]);
+                                                    cartdata[0], cartdata[1], cartdata[2], cartdata[3]);
 
                                             System.out.println(formattedOutput);
                                         }
@@ -380,15 +380,16 @@ public class Main{
                                                 String data = scf2.nextLine();
                                                 String[] cartdata = data.split(",");
                                                 int medTotalPrice = Integer.parseInt(cartdata[3]) * Integer.parseInt(cartdata[2]);
-                                                System.out.println(String.format("%-29s | %-13s | %-13s | %d", cartdata[0], cartdata[1], cartdata[2], medTotalPrice));
+                                                total += medTotalPrice;
+                                                System.out.println(String.format("%-29s | %-13s | %-13s | %d", cartdata[0], cartdata[1], cartdata[3], medTotalPrice));
                                             }
-                                            
+                                            System.out.println("\n\nTotal = " + total + "rs\n");
                                         }
                                         else if(reply.toLowerCase().equals("n")){
                                             System.out.print("\nExited Generate Bill - \n");
                                         }
                                     }
-                                } catch (Exception e) {
+                                } catch (IOException e) {
                                     System.out.println("\nSomething Went Wrong - ");
                                 }
                             }
@@ -468,7 +469,7 @@ public class Main{
                                                 String reply = scan.next();
 
                                                 if(reply.toLowerCase().equals("y")){
-                                                    FileWriter fw = new FileWriter("cart.csv",true);
+                                                    FileWriter fw = new FileWriter("cartdata.csv",true);
                                                     fw.append(d[1] + "," + d[2] + "," + d[4] + "," + Quantity + "\n");
                                                     fw.close();
                                                 }
@@ -500,7 +501,7 @@ public class Main{
                             else if(choice21 == 3){
                                 System.out.println("\nClear Cart");
 
-                                File f = new File("cart.csv");
+                                File f = new File("cartdata.csv");
 
                                 try {
                                     Scanner scf = new Scanner(f);
@@ -517,7 +518,9 @@ public class Main{
                                     }
 
                                 } catch (Exception e) {
-                                    
+
+                                    System.out.println("Something Went Wrong - ");
+
                                 }
                             }
                             else if(choice21 == 4){
