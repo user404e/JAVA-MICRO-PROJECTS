@@ -369,7 +369,6 @@ public class Main{
                                 ArrayList<String> fulldata = new ArrayList<>();
                                 String s = "n";
                                 
-                                
                                 do{
                                 System.out.println("\n!! -- Add To Cart (Search Medicine) -- !!");
 
