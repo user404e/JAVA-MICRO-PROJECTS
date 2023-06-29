@@ -345,20 +345,48 @@ public class Main{
                                         System.out.println("\nCart Is Empty - ");
                                     }
                                     else{
+                                        System.out.println("\nItems In Cart : -\n");
                                         while (scf.hasNextLine()) {
                                             String data = scf.nextLine();
                                             String cartdata[] = data.split(",");
-                                            
-                                            System.out.println("Price : " + cartdata[0] + " | Power : " + cartdata[1] + " | Price Per Tablets : " + cartdata[2] + " | Quantity : " + cartdata[3]);
+                                           
+                                            String formattedOutput = String.format("Name: %-20s | Power: %-10s | Price Per Tablet: %-10s | Quantity: %s",
+                                                    cartdata[0], cartdata[1], cartdata[2], cartdata[4]);
+
+                                            System.out.println(formattedOutput);
                                         }
 
-                                        System.out.print("Get Final Bil (Y/n): ");
+                                        System.out.print("\nGet Final Bil (Y/n): ");
                                         String reply = scan.next();
 
-                                        if(reply.toLowerCase().equals("y")){
+                                        if (reply.toLowerCase().equals("y")) {
+
+                                            Scanner scf2 = new Scanner(f);
+                                            int total = 0;
+
+                                            System.out.print("\nEnter Customer Name: ");
+                                            String customerName = scan.nextLine();
+                                            customerName += scan.nextLine();
+
+                                            System.out.print("Enter Customer Number: ");
+                                            String customerNumber = scan.next();
+
+                                            System.out.println(String.format("\n %45s","ABC MEDICAL STORE"));
+
+                                            System.out.println(String.format("\nName: %-36s Number: %s", customerName, customerNumber));
+                                            System.out.println("\n" + String.format("Medicine Name                 | Power         | Quantity      | Price\n"));
+                                            
+                                            while (scf2.hasNextLine()) {
+                                                String data = scf2.nextLine();
+                                                String[] cartdata = data.split(",");
+                                                int medTotalPrice = Integer.parseInt(cartdata[3]) * Integer.parseInt(cartdata[2]);
+                                                System.out.println(String.format("%-29s | %-13s | %-13s | %d", cartdata[0], cartdata[1], cartdata[2], medTotalPrice));
+                                            }
                                             
                                         }
-
+                                        else if(reply.toLowerCase().equals("n")){
+                                            System.out.print("\nExited Generate Bill - \n");
+                                        }
                                     }
                                 } catch (Exception e) {
                                     System.out.println("\nSomething Went Wrong - ");
