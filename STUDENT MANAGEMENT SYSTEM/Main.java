@@ -213,7 +213,7 @@ public class Main {
                                 else{
                                     System.out.println("\nInvalid Input -");
                                 }
-                            } while (choice!=0);
+                            } while (choice1!=0);
                             break;
                         }
                         else{
@@ -228,10 +228,33 @@ public class Main {
                     break;
                 case 2:
                 System.out.println("\n -------- Student Menu --------");
+                System.out.println("\n1 - Search Result");
+                System.out.println("0 - Exit");
+
+                System.out.print("\nEnter Choice : ");
+                int choice2 = sc.nextInt();
+
+                if(choice2 == 1){
+
+                    Result r = new Result();
+                    System.out.println("\n -- Search Result -- ");
+
+                    System.out.print("\nEnter Your Enrollment Number : ");
+                    String enrollmentNumber = sc.next();
+                    int rvalue = r.printdata(enrollmentNumber);
+
+                    if(rvalue == 1){
+                        System.out.print("Given Enrollment Number Is Not Found , Check And Try Again - ");
+                    }
+                    else if(rvalue == -1){
+                        System.out.print("Something Went Wrong - ");
+                    }
+                }
                     break;
                 case 0:
                     System.out.println("\nExited");
                     break;
+                
                 default:
                     System.out.println("\nWrong input ");
                     break;

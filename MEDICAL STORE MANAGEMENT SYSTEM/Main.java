@@ -267,7 +267,6 @@ public class Main{
                                         System.out.print("\nEnter Power(mg) 'or' Enter 0 To Show All mg : ");
                                         String powerMg = scan.next();
 
-                      
                                         int rvalue = stk.searchMedicine(medName,powerMg);
 
                                         if(rvalue == 1){
@@ -383,7 +382,7 @@ public class Main{
                                                 total += medTotalPrice;
                                                 System.out.println(String.format("%-29s | %-13s | %-13s | %d", cartdata[0], cartdata[1], cartdata[3], medTotalPrice));
                                             }
-                                            System.out.println("\n\nTotal = " + total + "rs\n");
+                                            System.out.println("\n\nTotal = " + total + " rs\n");
                                         }
                                         else if(reply.toLowerCase().equals("n")){
                                             System.out.print("\nExited Generate Bill - \n");
