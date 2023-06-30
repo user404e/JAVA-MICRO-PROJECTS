@@ -19,7 +19,7 @@ public class Main {
                     int count = 1;
                     Login lg = new Login();
 
-                    do {
+                    
                         System.out.print("\nEnter UserId : ");
                         String id = sc.next();
 
@@ -213,19 +213,16 @@ public class Main {
                                 else{
                                     System.out.println("\nInvalid Input -");
                                 }
+
                             } while (choice1!=0);
+
                             break;
                         }
-                        else{
-                            System.out.println("Incorrect UserId Or PassWord , Try Again");
-                            System.out.println((3-count) + " Chances Left");
-                        }
-                        count ++;
-                        if(count == 3){
-                        }
-                    } while (count<=3);
 
-                    break;
+                        else{
+                            System.out.println("\nIncorrect User Id 'or' Password , try again - ");
+                        }
+                        break;
                 case 2:
                 System.out.println("\n -------- Student Menu --------");
                 System.out.println("\n1 - Search Result");
