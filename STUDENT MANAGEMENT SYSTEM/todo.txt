@@ -1,0 +1,1 @@
+- Search Student Result By Sem If Sem is 0 the show all sems result

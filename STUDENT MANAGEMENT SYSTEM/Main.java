@@ -13,12 +13,11 @@ public class Main {
             System.out.print("\nEnter Your Choice : ");
             choice = sc.nextInt();
             
-            switch (choice) {
-                case 1:
-                    
-                    int count = 1;
-                    Login lg = new Login();
+            Login lg = new Login();
 
+            switch (choice) {
+                
+                case 1:
                     
                         System.out.print("\nEnter UserId : ");
                         String id = sc.next();
@@ -224,30 +223,50 @@ public class Main {
                         }
                         break;
                 case 2:
-                System.out.println("\n -------- Student Menu --------");
-                System.out.println("\n1 - Search Result");
-                System.out.println("0 - Exit");
+                    System.out.println("\n-- Student Login -- ");
 
-                System.out.print("\nEnter Choice : ");
-                int choice2 = sc.nextInt();
-
-                if(choice2 == 1){
-
-                    Result r = new Result();
-                    System.out.println("\n -- Search Result -- ");
-
-                    System.out.print("\nEnter Your Enrollment Number : ");
+                    System.out.print("\nEnter Enrollment Number : ");
                     String enrollmentNumber = sc.next();
-                    int rvalue = r.printdata(enrollmentNumber);
 
-                    if(rvalue == 1){
-                        System.out.print("Given Enrollment Number Is Not Found , Check And Try Again - ");
-                    }
-                    else if(rvalue == -1){
-                        System.out.print("Something Went Wrong - ");
-                    }
-                }
+                    System.out.print("Enter Password : ");
+                    String password = sc.next();
+
+                    if(lg.studentlogin(enrollmentNumber,password)){
+
+                        System.out.println("\nLogin Successfully");
+
+                        System.out.println("\n -------- Student Menu --------");
+                        System.out.println("\n1 - Search Result");
+                        System.out.println("0 - Exit");
+
+                        System.out.print("\nEnter Choice : ");
+                        int choice2 = sc.nextInt();
+
+                            if(choice2 == 1){
+
+                                Result r = new Result();
+                                System.out.println("\n -- Search Result -- ");
+
+                                System.out.print("\nEnter Your Enrollment Number : ");
+                                String enrollmentNum = sc.next();
+                                int rvalue = r.printdata(enrollmentNum);
+
+                                if(rvalue == 1){
+                                    System.out.print("Given Enrollment Number Is Not Found , Check And Try Again - ");
+                                }
+                                else if(rvalue == -1){
+                                    System.out.print("Something Went Wrong - ");
+                                }
+                            }
                     break;
+
+                    }
+                    else{
+                        System.out.println("\nIncorrect User Id 'or' Password , try again - ");
+                    }
+
+                    break;
+
                 case 0:
                     System.out.println("\nExited");
                     break;
