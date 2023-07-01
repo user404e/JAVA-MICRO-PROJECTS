@@ -234,13 +234,15 @@ public class Main {
                     if(lg.studentlogin(enrollmentNumber,password)){
 
                         System.out.println("\nLogin Successfully");
+                        int choice2 = -1;
+                        do {
+                            
+                            System.out.println("\n -------- Student Menu --------");
+                            System.out.println("\n1 - Search Result");
+                            System.out.println("0 - Exit");
 
-                        System.out.println("\n -------- Student Menu --------");
-                        System.out.println("\n1 - Search Result");
-                        System.out.println("0 - Exit");
-
-                        System.out.print("\nEnter Choice : ");
-                        int choice2 = sc.nextInt();
+                            System.out.print("\nEnter Choice : ");
+                            choice2 = sc.nextInt();
 
                             if(choice2 == 1){
 
@@ -249,7 +251,10 @@ public class Main {
 
                                 System.out.print("\nEnter Your Enrollment Number : ");
                                 String enrollmentNum = sc.next();
-                                int rvalue = r.printdata(enrollmentNum);
+
+                                System.out.print("\nEnter Sem 'or' Enter 0 To Show All Sems Result : ");
+                                String sem = sc.next();
+                                int rvalue = r.printdata(enrollmentNum,sem);
 
                                 if(rvalue == 1){
                                     System.out.print("Given Enrollment Number Is Not Found , Check And Try Again - ");
@@ -257,7 +262,19 @@ public class Main {
                                 else if(rvalue == -1){
                                     System.out.print("Something Went Wrong - ");
                                 }
+                                else if(rvalue == 3){
+                                    System.out.println("Given Sem Is Not Found , Check And Try Again - ");
+                                }
                             }
+                            else if(choice2 == 0){
+                                System.out.println("\nStudent Menu Exited");
+                            }
+                            else{
+                                System.out.println("\nWrong Input");
+                            }
+
+                        } while (choice2!=0);
+                        
                     break;
 
                     }
