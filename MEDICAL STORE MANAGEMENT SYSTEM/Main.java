@@ -318,7 +318,6 @@ public class Main{
 
                         int choice21 = -1;
 
-                        
                         while(choice21!=0){
                             System.out.println("\n!- STAFF MENU -!");
 
@@ -370,7 +369,7 @@ public class Main{
                                             System.out.print("Enter Customer Number: ");
                                             String customerNumber = scan.next();
 
-                                            System.out.println(String.format("\n %45s","ABC MEDICAL STORE"));
+                                            System.out.println(String.format("\n %45s","KRISHNA MEDICAL STORE"));
 
                                             System.out.println(String.format("\nName: %-36s Number: %s", customerName, customerNumber));
                                             System.out.println("\n" + String.format("Medicine Name                 | Power         | Quantity      | Price\n"));
