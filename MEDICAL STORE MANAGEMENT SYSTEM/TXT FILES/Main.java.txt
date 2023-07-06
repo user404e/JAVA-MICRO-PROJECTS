@@ -366,6 +366,7 @@ public class Main{
                             System.out.println("\n1) Generate Bill");
                             System.out.println("2) Add To Cart");
                             System.out.println("3) Clear Cart");
+                            System.out.println("4) Remove Item From Cart");
                             System.out.println("0) Exit");
                             
                             System.out.print("\n_ : ");
@@ -410,8 +411,7 @@ public class Main{
                                             System.out.print("Enter Customer Number: ");
                                             String customerNumber = scan.next();                                                        
                                             System.out.println("\n---------------------------------------------------------------------");
-                                            System.
-                                            out.println(String.format("\n %45s","KRISHNA MEDICAL STORE"));
+                                            System.out.println(String.format("\n %45s","KRISHNA MEDICAL STORE"));
 
                                             System.out.println(String.format("\nName: %-36s Number: %s", customerName, customerNumber));
                                             System.out.println("\n" + String.format("Medicine Name                 | Power         | Quantity      | Price\n"));
@@ -572,6 +572,9 @@ public class Main{
                                     System.out.println("Something Went Wrong - ");
 
                                 }
+                            }
+                            else if(choice21 == 4){
+                                System.out.println("\nRemove Items From Cart");
                             }
                             else if(choice21 == 0){
                                 System.out.println("\nExited Staff Menu - ");

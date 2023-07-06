@@ -236,13 +236,12 @@ public class Staff {
             FileWriter fw = new FileWriter(f, true);
             LocalDateTime now = LocalDateTime.now(); 
             
-            String finalString = employeeid + "," + firstName + "," + lastName + "," + age + "," + mobilenUMBER + "," + address + "," + now + "," + salary;
+            String finalString = employeeid + "," + firstName + "," + lastName + "," + age + "," + mobilenUMBER + "," + address + "," + "," + now + "," + salary;
             fw.append(finalString);
             fw.close();
             return 1;
         } catch (IOException e) {
             return 0;
         }
-
     }
 }
